@@ -40,7 +40,7 @@ module.exports = {
     deleteBookmark: async (req, res) =>{
         try{
             console.log(req.body.linkName);
-            await BOOKMARKS.deleteOne({name : req.body.linkName});
+            await BOOKMARKS.deleteOne({_id : req.body.linkName});
             res.json("Item deleted");
         }
         catch(err){

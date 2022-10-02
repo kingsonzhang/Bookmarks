@@ -12,7 +12,7 @@ async function deleteLink(){
             method: "delete",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                linkName : this.parentNode.childNodes[0].innerText
+                linkName : this.parentNode.id
             })
         });
         const data = await res.json();
