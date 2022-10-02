@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.hide{
+    display: none !important;
+}
+
+.Container{
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#Info{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0 10px 0;
+}
+
+h1{
+    font-family: 'Lexend', sans-serif;
+    font-family: 'Special Elite', cursive;
+    font-size: 4rem;
+}
+
+.Scrollable{
+    overflow: scroll;
+    max-height: 500px;
+    scrollbar-width:none
+}
+
+li{
+    font-family: 'Lexend', sans-serif;
+    font-family: 'Special Elite', cursive;
+    display: flex;
+    border-bottom: gray 2px solid;
+    justify-content: space-between;
+    margin-right: 10px;
+    padding: 10px 0 5px 0;
+}
+
+#Edit{
+    flex-basis: 90%;
+}
+
+li a{
+    flex-basis: 90%;
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+li input{
+    flex-basis: 90%;
+    margin-left: 10px;
+    width: 50%;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+}
+.fa{
+    cursor: pointer;
+}
+
+#AddBookmark{
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+#AddBookmark input{
+    flex-basis: 40%;
+    width: 100%;
+    margin: 0 1px;
+}
+
+#AddBookmark button{
+    flex-basis: 20%;
+}
+
+#AddLink{
+    padding: 0;
+}
+
+@media only screen and (orientation: portrait){
+    .Container{
+        width: 95%;
+    }
+    .Scrollable{
+        max-height: 600px;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    #Logout{
+        padding: 0 5px;
+    }
+    li{
+        padding-bottom: 0;
+    }
+    li a{
+        font-size: 1.5rem;
+        flex-basis: 75%;
+    }
+    li input{
+        flex-basis: 75%;
+    }
+}
+@media (min-width: 500px) and (max-width: 950px){
+    .Container{
+        width: 95%;
+    }
+    .Scrollable{
+        max-height: 200px;
+    }
+    li a{
+        flex-basis: 85%;
+    }
+    li input{
+        flex-basis: 85%;
+    }
+}

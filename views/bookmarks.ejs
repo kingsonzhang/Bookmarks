@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&family=Special+Elite&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bookmarksStyle.css">
+    <title>Bookmarks</title>
+</head>
+<body>
+    <section class="Container">
+        <section id="Info">
+            <h1>Hi <%= userName %>!</h1>
+            <a href="/logout"><button type="button" class="btn btn-outline-primary" id="Logout">Logout</button></a>
+        </section>
+        <section class="Scrollable">
+            <ul>
+            <% for (let i = 0; i < links.length; i++){%>
+                <li id="<%= links[i]._id%>"><a target="_blank" href="<%= links[i].link%>"><%= links[i].name%></a><input class="hide bookmarkNameChange" type="text" placeholder="Edit Name" name="nameChange"><i class="fa fa-pencil fa-2x"></i><i class='fa fa-trash fa-2x'></i>
+                </li>
+            <%}%>
+            </ul>
+        </section>
+        <form id="AddBookmark" action="/bookmarks/addBookmark" method="POST">
+            <input type="text" placeholder="Enter link name" name="linkName">
+            <input type="text" placeholder="Enter URL" name="URL">
+            <button type="submit" class="btn btn-outline-success" id="AddLink">Add Link</button>
+        </form>
+    </section>
+    <script src="js/bookmarks.js"></script>
+</body>
+</html>
